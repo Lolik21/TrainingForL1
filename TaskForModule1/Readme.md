@@ -20,10 +20,11 @@ namespace HelloWorldApplication
 `[assembly: AssemblyFileVersion("1.0.0.0")]` - `[assembly: AssemblyFileVersion("4.2.2.1")]`
 
 3. ##### Examine assembly with ILDASM tool
- 1. ###### Manifest:
- ![Manifest](https://i.ibb.co/Jvd5XHq/Manifest.png)
- 2. ###### Types metadata
- ![Types metadata](https://i.ibb.co/WtJGvHV/TypeDef.png)
+  1. ###### Manifest:
+  ![Manifest](https://i.ibb.co/Jvd5XHq/Manifest.png)
+
+  2. ###### Types metadata
+  ![Types metadata](https://i.ibb.co/WtJGvHV/TypeDef.png)
 
 
  ## Task 2 - Create static method "GetCurrentTime()"
@@ -49,6 +50,7 @@ namespace HelloWorldApplication
 ```
 1. ###### TypeDef - New def "GetCurrentTime":
 ![New Def static method](https://i.ibb.co/C1pVt08/Type-Def-Static-Method.png)
+
 2. ###### TypeRef - New ref to "System.DateTime"
 ![New Ref to DateTime](https://i.ibb.co/vYrmRmY/Type-Ref-Data-Time.png)
 
@@ -112,5 +114,5 @@ namespace DebugVsRelease
     }
 }
 ```
- 2. Compare Debug build and Release build.
+ 2. #### Compare Debug build and Release build.
 ![Debug Vs Release](https://i.ibb.co/zmyHK00/Debug-Vs-Release.png)
