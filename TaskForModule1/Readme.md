@@ -20,10 +20,10 @@ namespace HelloWorldApplication
 `[assembly: AssemblyFileVersion("1.0.0.0")]` - `[assembly: AssemblyFileVersion("4.2.2.1")]`
 
 3. ##### Examine assembly with ILDASM tool
-  1. ###### Manifest:
+  ###### Manifest:
   ![Manifest](https://i.ibb.co/Jvd5XHq/Manifest.png)
 
-  2. ###### Types metadata
+  ###### Types metadata:
   ![Types metadata](https://i.ibb.co/WtJGvHV/TypeDef.png)
 
 
