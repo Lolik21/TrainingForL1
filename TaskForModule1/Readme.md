@@ -112,5 +112,5 @@ namespace DebugVsRelease
     }
 }
 ```
- 2. Compare Debug build and Release build:
+ 2. Compare Debug build and Release build.
 ![Debug Vs Release](https://i.ibb.co/zmyHK00/Debug-Vs-Release.png)
