@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
 
-namespace FileSystemVisitor
+namespace FileSystemVisitor.FileSystem
 {
-    public class FileSystem : IFileSystem
+    internal class FileSystem : IFileSystem
     {
         public FileInfo[] GetFiles(DirectoryInfo directoryInfo)
         {

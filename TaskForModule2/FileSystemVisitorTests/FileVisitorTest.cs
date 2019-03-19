@@ -1,6 +1,8 @@
 using System;
 using System.IO;
 using FileSystemVisitor;
+using FileSystemVisitor.Exceptions;
+using FileSystemVisitor.FileSystem;
 using Moq;
 using NUnit.Framework;
 

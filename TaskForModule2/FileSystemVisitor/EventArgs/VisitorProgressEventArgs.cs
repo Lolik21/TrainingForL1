@@ -1,6 +1,6 @@
-﻿namespace FileSystemVisitor
+﻿namespace FileSystemVisitor.EventArgs
 {
-    public class VisitorProgressEventArgs : VisitorEventArgs
+    public sealed class VisitorProgressEventArgs : VisitorEventArgs
     {
         public bool IsStopVisiting { get; set; }
         public bool IsSkipVisitedEntity { get; set; }

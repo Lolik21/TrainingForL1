@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace FileSystemVisitor
+﻿namespace FileSystemVisitor.EventArgs
 {
-    public class VisitorEventArgs : EventArgs
+    public class VisitorEventArgs : System.EventArgs
     {
         public string Message { get; set; }
     }

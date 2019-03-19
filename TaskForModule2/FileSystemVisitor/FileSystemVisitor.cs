@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using FileSystemVisitor.EventArgs;
+using FileSystemVisitor.Exceptions;
+using FileSystemVisitor.FileSystem;
 
 namespace FileSystemVisitor
 {
@@ -66,7 +69,7 @@ namespace FileSystemVisitor
             }
             foreach (var file in files)
             {
-                if (IsContinueProgress(file, FileFounded) && IsPassedFileFilter(file))
+                if (IsContinueProgress(file, FileFounded, "File founded") && IsPassedFileFilter(file))
                 {
                     yield return file;
                 }
@@ -75,7 +78,7 @@ namespace FileSystemVisitor
             var directories = _fileSystem.GetDirectories(directoryInfo);
             foreach (var directory in directories)
             {
-                if (IsContinueProgress(directory, DirectoryFounded) && IsPassedDirectoryFilter(directory))
+                if (IsContinueProgress(directory, DirectoryFounded, "Directory founded") && IsPassedDirectoryFilter(directory))
                 {
                     foreach (var fileSystemInfo in VisitInternal(directory))
                     {
@@ -93,18 +96,21 @@ namespace FileSystemVisitor
         private bool IsPassedDirectoryFilter(DirectoryInfo directory)
         {
             var isPassed = _fileFilter == null || _directoryFilter.Invoke(directory);
-            return isPassed && IsContinueProgress(directory, FilteredDirectoryFounded);
+            return isPassed && IsContinueProgress(directory, FilteredDirectoryFounded, "Directory filter passed");
         }
 
         private bool IsPassedFileFilter(FileInfo file)
         {
             var isPassed = _fileFilter == null || _fileFilter.Invoke(file);
-            return isPassed && IsContinueProgress(file, FilteredFileFounded);
+            return isPassed && IsContinueProgress(file, FilteredFileFounded, "File filter passed");
         }
 
-        private bool IsContinueProgress(FileSystemInfo entityInfo, EventHandler<VisitorProgressEventArgs> eventHandler)
+        private bool IsContinueProgress(
+            FileSystemInfo entityInfo, 
+            EventHandler<VisitorProgressEventArgs> eventHandler, 
+            string entityMessage)
         {
-            var args = new VisitorProgressEventArgs { Message = entityInfo.FullName };
+            var args = new VisitorProgressEventArgs { Message = $"{entityMessage} : {entityInfo.FullName}" };
             eventHandler?.Invoke(this, args);
             if (args.IsSkipVisitedEntity)
             {

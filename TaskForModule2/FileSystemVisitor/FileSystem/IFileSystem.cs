@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace FileSystemVisitor
+namespace FileSystemVisitor.FileSystem
 {
     public interface IFileSystem
     {

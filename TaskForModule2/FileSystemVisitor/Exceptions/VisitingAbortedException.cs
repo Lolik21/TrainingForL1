@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace FileSystemVisitor
+namespace FileSystemVisitor.Exceptions
 {
     [Serializable]
     public class VisitingAbortedException : Exception
