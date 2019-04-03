@@ -47,15 +47,20 @@ namespace SampleQueries
 		public void Linq2()
 		{
             Console.WriteLine(@"With grouping :");
-            var groupedSuppliers = dataSource.Suppliers.GroupBy(supplier => new {supplier.City, supplier.Country});
-            var result = dataSource.Customers.Select(customer => new
+            var join = dataSource.Suppliers.Join(dataSource.Customers,
+                supplier => new {supplier.City, supplier.Country},
+                customer => new {customer.City, customer.Country}, (supplier, customer) => new {supplier, customer})
+                .GroupBy(arg => arg.supplier);
+
+            foreach (var group in join)
             {
-                Customer = customer.CustomerID,
-                Suppliers = string.Join("|", groupedSuppliers.Where(grouping =>
-                        grouping.Key.City == customer.City && grouping.Key.Country == customer.Country)
-                    .SelectMany(grouping => grouping).Select(supplier => supplier.SupplierName))
-            });
-            ObjectDumper.Write(result);
+                Console.WriteLine(group.Key.SupplierName);
+                foreach (var customer in group)
+                {
+                    Console.Write(@"  ");
+                    ObjectDumper.Write(customer.customer);
+                }
+            }
 
             Console.WriteLine(@"Without grouping :");
             var result2 = dataSource.Customers.Select(customer => new
@@ -183,7 +188,7 @@ namespace SampleQueries
 
         [Category("Training Operators")]
         [Title("Linq9")]
-        [Description("Indicate all customers who have a non-numeric postal code or a region is not filled or the operator code is not specified in the phone (for simplicity, we assume that this is equivalent to “no round brackets at the beginning”).")]
+        [Description("Calculate the average profitability of each city (average order amount for all customers from this city) and average intensity (average number of orders per customer from each city)")]
         public void Linq9()
         {
             var result = dataSource.Customers.GroupBy(customer => customer.City).Select(grouping =>
