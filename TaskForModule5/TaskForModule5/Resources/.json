@@ -1,0 +1,16 @@
+{
+  "LocaleSelected": "Locale selected",
+  "Russian": "1) Russian",
+  "English": "2) English",
+  "WrongLanguageNumber": "Wrong language number",
+  "FolderNotFounded": "Folder not founded",
+  "BrokerAttached": "Broker attached to ({0})",
+  "EntityArrived": "Entity arrived: ({0})",
+  "RuleApply": "Applying rule ({0}) for ({1})",
+  "NoRuleFounded": "Rules not founded for ({0}) file will be moved to default folder",
+  "FileMoved": "File ({0}) moved to ({1})",
+  "DefaultFolder": "Default file folder",
+  "Images": "Images",
+  "TextDocs": "Text documents",
+  "PressEnterKey":  "Press Enter to close program..." 
+}
