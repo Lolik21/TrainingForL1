@@ -8,7 +8,7 @@ using Unity;
 
 namespace TaskForModule5.Application
 {
-    public class Application : IApplication
+    public class Application
     {
         private readonly ILocaleSelector _localeSelector;
         private readonly IEnumerable<string> _foldersToListen;

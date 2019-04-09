@@ -3,7 +3,7 @@
   "Russian": "1) Russian",
   "English": "2) English",
   "WrongLanguageNumber": "Wrong language number",
-  "FolderNotFounded": "Folder not founded",
+  "FolderNotFounded": "Folder not founded ({0})",
   "BrokerAttached": "Broker attached to ({0})",
   "EntityArrived": "Entity arrived: ({0})",
   "RuleApply": "Applying rule ({0}) for ({1})",
@@ -12,5 +12,6 @@
   "DefaultFolder": "Default file folder",
   "Images": "Images",
   "TextDocs": "Text documents",
-  "PressEnterKey":  "Press Enter to close program..." 
+  "PressEnterKey": "Press Enter to close program...",
+  "FailedToMove":  "Failed to move file. Please try again..." 
 }

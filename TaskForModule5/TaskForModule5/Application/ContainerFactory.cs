@@ -26,7 +26,7 @@ namespace TaskForModule5.Application
                 .AddJsonFile("settings.json", true, true).Build();
             unityContainer.RegisterInstance(configuration);
             unityContainer.RegisterType<ISettings, Settings.Settings>();
-            unityContainer.RegisterType<IApplication, Application>();
+            unityContainer.RegisterType<Application>();
             unityContainer.RegisterType<IFileBroker, FileBroker.FileBroker>();
             return unityContainer;
         }

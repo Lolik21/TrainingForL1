@@ -9,11 +9,9 @@ namespace TaskForModule5
     {
         static void Main(string[] args)
         {
-            IContainerFactory containerFactory = new ContainerFactory();
-            IUnityContainer unityContainer = containerFactory.ConfigureApplicationContainer();
-            IApplication application = unityContainer.Resolve<IApplication>();
+            IUnityContainer unityContainer = new ContainerFactory().ConfigureApplicationContainer();
             ICustomStringLocalizer customStringLocalizer = unityContainer.Resolve<ICustomStringLocalizer>();
-            application.Run();
+            unityContainer.Resolve<Application.Application>().Run();
             Console.WriteLine(customStringLocalizer["PressEnterKey"]);
             Console.ReadLine();
         }

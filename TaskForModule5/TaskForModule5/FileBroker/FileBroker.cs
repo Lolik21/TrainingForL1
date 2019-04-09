@@ -42,10 +42,18 @@ namespace TaskForModule5.FileBroker
 
         private void OnFileCreated(object sender, FileSystemEventArgs e)
         {
-            _logger.Log(LogLevel.None, string.Format(_customStringLocalizer["EntityArrived"], e.FullPath));
-            if (!IsDirectory(e.FullPath))
+            try
             {
-                ApplyRuleSetForFile(e.FullPath, e.Name);
+                _logger.Log(LogLevel.None, string.Format(_customStringLocalizer["EntityArrived"], e.FullPath));
+                if (!IsDirectory(e.FullPath))
+                {
+                    ApplyRuleSetForFile(e.FullPath, e.Name);
+                }
+            }
+            catch (Exception exception)
+            {
+                _logger.Log(LogLevel.None, exception.Message);
+                _logger.Log(LogLevel.None, _customStringLocalizer["FailedToMove"]);
             }
         }
 
