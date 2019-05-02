@@ -1,0 +1,5 @@
+﻿{
+  "connectionString": "mongodb+srv://Ilya:123qwerty123@cluster0-ci1ju.mongodb.net/test?retryWrites=true",
+  "databaseName": "DataBaseTask7",
+  "collectionName":  "Employees"
+}
