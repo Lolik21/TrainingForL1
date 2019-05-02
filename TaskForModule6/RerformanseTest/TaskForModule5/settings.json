@@ -1,0 +1,15 @@
+{
+  "Settings": {
+    "AddNumber": true,
+    "AddDate": false,
+    "Folders": [
+      "C:\\Users",
+      "C:\\Users\\Ilya_Kremniou\\Desktop\\TestFolder",
+      "C:\\Users\\Ilya_Kremniou\\Desktop\\TestFolder2"
+    ],
+    "Rules": {
+      ".txt$": "TextDocs",
+      ".png$": "Images"
+    }
+  } 
+}
