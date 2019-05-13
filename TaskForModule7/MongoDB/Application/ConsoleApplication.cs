@@ -60,12 +60,12 @@ namespace MongoDB
             {
                 case 1:
                     var employees = _dataProvider.GetAll();
-                    Console.WriteLine(JsonConvert.SerializeObject(employees));
+                    Console.WriteLine(JsonConvert.SerializeObject(employees, Formatting.Indented));
                     break;
                 case 2:
                     var getId = GetId();
                     var getEmployee = _dataProvider.GetItem(getId);
-                    Console.WriteLine(JsonConvert.SerializeObject(getEmployee));
+                    Console.WriteLine(JsonConvert.SerializeObject(getEmployee, Formatting.Indented));
                     break;
                 case 3:
                     var employee = Generator.Default.Single<Employee>();
